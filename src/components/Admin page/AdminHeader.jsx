@@ -35,6 +35,14 @@ export default function AdminHeader() {
                         <FaClipboardList />
                         <Link to={'/acessories'} >Acessories Lists</Link>
                     </div>
+                    <div className='flex items-center hover:text-[blue] hover:bg-[#F3F2F7] p-4  cursor-pointer gap-3'>
+                        <IoBagAdd/>
+                        <Link to={"/blog/addblog"} >Add Blogs</Link>
+                    </div>
+                    <div className='flex items-center hover:text-[blue] hover:bg-[#F3F2F7] p-4  cursor-pointer gap-3'>
+                        <FaClipboardList />
+                        <Link to={'/blog'} >Blogs Lists</Link>
+                    </div>
                     
                 </div>
             </div>

@@ -25,6 +25,9 @@ import Contact from './components/Contact';
 import Cart from './components/Pages/Cart';
 import Acessories from './components/Admin page/Acessories';
 import Addacessories from './components/Admin page/Addacessories';
+import Blog from './components/Admin page/Blog';
+import AddBlog from './components/Admin page/AddBlog';
+import BlogHome from './components/Pages/BlogHome';
 
 export default function App() {
   let dispatch = useDispatch()
@@ -98,6 +101,10 @@ export default function App() {
           path: "cart",
           element: <Cart/>
         },
+        {
+          path: "blog",
+          element: <BlogHome/>
+        },
       ],
     },
 
@@ -164,6 +171,30 @@ export default function App() {
             ]
           },
        
+          {
+            path: "blog",
+            children:[
+              {
+                path:"",
+                element: 
+              <Blog/>
+            ,  
+              },
+              {
+                path:"addblog",
+                element: 
+              <AddBlog/>
+            ,  
+              }
+              ,
+              {
+                path:"edit/:slug",
+                element: 
+              <AddBlog/>
+            ,  
+              }
+            ]
+          },
         
       
 

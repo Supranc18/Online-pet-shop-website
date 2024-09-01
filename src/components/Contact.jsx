@@ -1,6 +1,30 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { toast } from 'react-toastify'
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+    .sendForm('service_ko0kpmd', 'template_8bznoa5', form.current, {
+      publicKey: 'pQo8ALa-7xgYTNaFd',
+    })
+    .then(
+      () => {
+        toast.success("Email send")
+        console.log('SUCCESS!');
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+        toast.error("faield sending email")
+      },
+    );
+};
+
   return (
     <>
       <div className='flex lg:flex-row flex-col container lg:gap-[100px] my-10'>
@@ -20,13 +44,14 @@ export default function Contact() {
       </div>
       
       <div className='container  bg-[#FEC23E] p-5 px-20 my-5'>
-        <form className='flex flex-col gap-5'>
+        <form className='flex flex-col gap-5'
+        ref={form} onSubmit={sendEmail}>
           <p>Drop us Feed back</p>
           <label htmlFor="name">Name*</label>
-          <input type="text" name='name' placeholder='name'
+          <input type="text" name='from_name' placeholder='name'
           className='p-2'/>
           <label htmlFor="email">Email*</label>
-          <input type="email" name='email' placeholder='example@example.com'
+          <input type="email" name='from_email' placeholder='example@example.com'
           className='p-2'/>
           <label htmlFor="message">Message*</label>
           <textarea name="message" id="message"></textarea>

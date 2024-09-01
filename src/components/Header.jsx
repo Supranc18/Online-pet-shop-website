@@ -9,6 +9,7 @@ import { setuser } from '../redux/slice/userSlice'
 import axios from 'axios'
 import { setProduct } from '../redux/slice/productSlice'
 
+
   
 export default function Header() {
   const navigat =useNavigate()
@@ -97,6 +98,7 @@ export default function Header() {
             <Link to={"/"}> Home</Link>
             <Link to={"/bread"}> Breeds</Link>
             <Link to={"/accessories"}> Accessories</Link>
+            <Link to={"/blog"}> Blog</Link>
             <Link to={"/contact"}> Contact</Link>
             <form  className='flex items-center bg-white px-3 py-1 rounded-xl '
             onSubmit={formHandle}> 

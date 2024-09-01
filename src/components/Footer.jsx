@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
     <>
-    <div className='bg-[#eaeaff]'>
+    <div className='bg-[#eaeaff]' id='footer'>
     <div className='flex justify-between container  pt-20 flex-wrap gap-5'>
         <div className='flex flex-col gap-7'>
             <Link>Home</Link>
